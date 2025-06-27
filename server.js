@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch((err) => console.error('❌ Lỗi kết nối MongoDB:', err));
 
 // Import các routes
-const authRoutes = require('./routes/authRoutes'); // nếu bạn đặt tên là authRoutes.js
+const authRoutes = require('./routes/authRoutes'); 
 app.use('/api/auth', authRoutes);
 
 // Route test
@@ -39,6 +39,3 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const bookingRoutes = require("./routes/booking");
 app.use("/api/bookings", bookingRoutes);
-
-const path = require("path");
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
